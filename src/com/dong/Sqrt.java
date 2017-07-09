@@ -7,8 +7,7 @@ public class Sqrt {
     	}
     	long i=0;// should be set long
     	for(i=1; i<=x/2; i++){
-    		if(i*i == x || 
-    				(i*i<x && x<(i+1)*(i+1))) {
+    		if(i*i<=x && x<(i+1)*(i+1)) {
     			return (int)i;
     		}
     	}
