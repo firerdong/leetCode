@@ -13,10 +13,20 @@ public class Main {
 //			System.out.println(Sqrt.mySqrt(i));
 //		}
 		
-		ListNode ln = ListNode.getAListNode1();
-		ListNode.output(ln);
-		ListNode ln1 = RemoveDuplicatesList.deleteDuplicates(ln);
-		ListNode.output(ln1);
+		//83
+//		ListNode ln = ListNode.getAListNode1();
+//		ListNode.output(ln);
+//		ListNode ln1 = RemoveDuplicatesList.deleteDuplicates(ln);
+//		ListNode.output(ln1);
+		
+		//88
+		int a[] = {1,3,5,0,0,0};
+		int b[] = {2,4,6};
+		MergeSortedArray.merge(a, 3, b, 3);
+		for(int i=0;i<a.length; i++){
+			System.out.print(a[i] + " ");
+		}
+		
 	}
 
 }
