@@ -147,13 +147,36 @@ public class TreeNode {
     			subQ.offer(t.right);
     		}
     	}
-			List<List<Integer>> ret = new LinkedList<List<Integer>>();
-			ret.add(l);
-			List<List<Integer>> sub = fun(subQ);
-			if(sub != null) {
-				ret.addAll(0, sub);
-			}
-			return ret;
+		List<List<Integer>> ret = new LinkedList<List<Integer>>();
+		ret.add(l);
+		List<List<Integer>> sub = fun(subQ);
+		if (sub != null) {
+			ret.addAll(0, sub);
+		}
+		return ret;
+    }
+    
+    public static TreeNode sortedArrayToBST(int[] nums) {
+        if(nums.length == 0) {
+        	return null;
+        }
+        
+        TreeNode root = new TreeNode(nums[0]);
+        for(int i=1; i<nums.length; i++) {
+        	TreeNode p = root;
+        	TreeNode newNode = new TreeNode(nums[i]);
+        	while(p != null) {
+        		if(p.val < nums[i]) {
+        			p = p.right;
+        		}else{
+        			p = p.left;
+        		}
+        	}
+        	System.out.println(nums[i]);
+        	p = newNode;
+        }
+        
+        return root;
     }
 
 }

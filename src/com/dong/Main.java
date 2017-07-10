@@ -42,15 +42,20 @@ public class Main {
 //		TreeNode tn = TreeNode.getATreeNode();
 //		System.out.println(TreeNode.maxDepth(tn));
 		
-		TreeNode tn = TreeNode.getATreeNode();
-		TreeNode.output(tn);
-		List<List<Integer>> ll = TreeNode.levelOrderBottom(tn);
-		for(List<Integer> l : ll) {
-			for(int i : l) {
-				System.out.println(i + " ");
-			}
-			System.out.println();
-		}
+//		TreeNode tn = TreeNode.getATreeNode();
+//		TreeNode.output(tn);
+//		List<List<Integer>> ll = TreeNode.levelOrderBottom(tn);
+//		for(List<Integer> l : ll) {
+//			for(int i : l) {
+//				System.out.println(i + " ");
+//			}
+//			System.out.println();
+//		}
+		
+		
+		int[] a = {1,2,3,4,5,6};
+		TreeNode t = TreeNode.sortedArrayToBST(a);
+		TreeNode.output(t);
 	}
 
 }
