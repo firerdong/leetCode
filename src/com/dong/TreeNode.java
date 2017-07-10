@@ -1,6 +1,8 @@
 package com.dong;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class TreeNode {
@@ -14,12 +16,12 @@ public class TreeNode {
 	public static TreeNode getATreeNode() {
 		TreeNode a1 = new TreeNode(1);
 		TreeNode a2 = new TreeNode(2);
-		TreeNode a3 = new TreeNode(2);
+		TreeNode a3 = new TreeNode(3);
 		TreeNode a4 = new TreeNode(4);
 		TreeNode a5 = new TreeNode(5);
-		TreeNode a6 = new TreeNode(5);
-		TreeNode a7 = new TreeNode(5);
-		TreeNode a8 = new TreeNode(5);
+		TreeNode a6 = new TreeNode(6);
+		TreeNode a7 = new TreeNode(7);
+		TreeNode a8 = new TreeNode(8);
 		
 		a1.left = a2;
 		a1.right = a3;
@@ -116,6 +118,42 @@ public class TreeNode {
         
         int max = Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
         return max;
+    }
+    
+    public static List<List<Integer>> levelOrderBottom(TreeNode root) {
+        if(root == null) {
+        	return new ArrayList<List<Integer>>();
+        }
+        
+        Queue<TreeNode> q = new LinkedList<TreeNode>();
+        q.add(root);
+        return fun(q);
+        
+    }
+    
+    private static List<List<Integer>> fun(Queue<TreeNode> q) {
+    	if( q.size() <= 0 ) {
+    		return null;
+    	}
+    	List<Integer> l = new ArrayList<Integer>();
+    	Queue<TreeNode> subQ = new LinkedList<TreeNode>();
+    	while(q.size() > 0){
+    		TreeNode t = q.poll();
+    		l.add(t.val);
+    		if(t.left != null) {
+    			subQ.offer(t.left);
+    		}
+    		if(t.right != null) {
+    			subQ.offer(t.right);
+    		}
+    	}
+			List<List<Integer>> ret = new LinkedList<List<Integer>>();
+			ret.add(l);
+			List<List<Integer>> sub = fun(subQ);
+			if(sub != null) {
+				ret.addAll(0, sub);
+			}
+			return ret;
     }
 
 }

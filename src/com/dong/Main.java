@@ -1,5 +1,7 @@
 package com.dong;
 
+import java.util.List;
+
 public class Main {
 
 	/**
@@ -37,10 +39,18 @@ public class Main {
 //		TreeNode tn = TreeNode.getATreeNode();
 //		System.out.println(TreeNode.isSymmetric2(tn));
 		
+//		TreeNode tn = TreeNode.getATreeNode();
+//		System.out.println(TreeNode.maxDepth(tn));
+		
 		TreeNode tn = TreeNode.getATreeNode();
-		System.out.println(TreeNode.maxDepth(tn));
-		
-		
+		TreeNode.output(tn);
+		List<List<Integer>> ll = TreeNode.levelOrderBottom(tn);
+		for(List<Integer> l : ll) {
+			for(int i : l) {
+				System.out.println(i + " ");
+			}
+			System.out.println();
+		}
 	}
 
 }
