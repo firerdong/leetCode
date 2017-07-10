@@ -28,12 +28,14 @@ public class Main {
 //		}
 		
 		//100 same tree
-		TreeNode tn = TreeNode.getATreeNode();
-		System.out.println(SameTree.isSameTree(tn, tn));
-		TreeNode tn2 = TreeNode.getATreeNode();
-		tn2.left.left.val = 100;
-		System.out.println(SameTree.isSameTree(tn, tn2));
+//		TreeNode tn = TreeNode.getATreeNode();
+//		System.out.println(SameTree.isSameTree(tn, tn));
+//		TreeNode tn2 = TreeNode.getATreeNode();
+//		tn2.left.left.val = 100;
+//		System.out.println(SameTree.isSameTree(tn, tn2));
 		
+		TreeNode tn = TreeNode.getATreeNode();
+		System.out.println(TreeNode.isSymmetric2(tn));
 		
 	}
 
