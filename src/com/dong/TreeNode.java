@@ -19,6 +19,7 @@ public class TreeNode {
 		TreeNode a5 = new TreeNode(5);
 		TreeNode a6 = new TreeNode(5);
 		TreeNode a7 = new TreeNode(5);
+		TreeNode a8 = new TreeNode(5);
 		
 		a1.left = a2;
 		a1.right = a3;
@@ -26,6 +27,7 @@ public class TreeNode {
 		a2.right = a5;
 		a3.left = a6;
 		a3.right = a7;
+		a4.left = a8;
 		return a1;
 	}
 	
@@ -105,6 +107,15 @@ public class TreeNode {
         }
         
         return true;
+    }
+    
+    public static int maxDepth(TreeNode root) {
+        if(root == null) {
+        	return 0;
+        }
+        
+        int max = Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+        return max;
     }
 
 }

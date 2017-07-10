@@ -34,8 +34,12 @@ public class Main {
 //		tn2.left.left.val = 100;
 //		System.out.println(SameTree.isSameTree(tn, tn2));
 		
+//		TreeNode tn = TreeNode.getATreeNode();
+//		System.out.println(TreeNode.isSymmetric2(tn));
+		
 		TreeNode tn = TreeNode.getATreeNode();
-		System.out.println(TreeNode.isSymmetric2(tn));
+		System.out.println(TreeNode.maxDepth(tn));
+		
 		
 	}
 
