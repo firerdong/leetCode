@@ -28,4 +28,37 @@ public class PascalTriangle {
        	ret.add(current);
        	return ret;
     }
+    
+    public static List<Integer> getRow(int rowIndex) {
+        List<Integer> ret = new ArrayList<Integer>();
+    	if(rowIndex<=0) {
+            ret.add(1);
+    		return ret;
+    	}
+
+    	int a[] = new int[rowIndex+1];
+    	if(rowIndex >= 1) {
+    		a[0] = 1;
+    		a[1] = 1;
+    	}
+    	
+    	for(int i=2; i<=rowIndex; i++) {
+    		int add = 0;
+    		for(int j=i; j>=0; j--) {
+    			int tmp = 0;
+    			if(j!=0){
+    				tmp = a[j-1];
+    			}
+    			a[j] = add + tmp;
+    			add = tmp;
+    			
+    		}
+    	}
+    	for(int k=0; k<rowIndex + 1; k++){
+    		if(a[k] > 0) {
+    			ret.add(a[k]);
+    		}
+    	}
+    	return ret;
+    }
 }

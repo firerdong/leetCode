@@ -76,13 +76,10 @@ public class Main {
 //		
 //		System.out.println(TreeNode.hasPathSum(tn, 8));
 		
-		List<List<Integer>> ret = PascalTriangle.generate(5);
-		for(List<Integer> l : ret) {
-			System.out.print("[");
-			for(int i : l ) {
-				System.out.print(i + " ");
-			}
-			System.out.println("]");
+//		List<List<Integer>> ret = PascalTriangle.generate(5);
+		List<Integer> ret = PascalTriangle.getRow(5);
+		for(Integer l : ret) {
+			System.out.print(l + " ");
 		}
 	}
 
