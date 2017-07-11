@@ -17,24 +17,24 @@ public class TreeNode {
 		TreeNode a1 = new TreeNode(1);
 		TreeNode a2 = new TreeNode(2);
 		TreeNode a3 = new TreeNode(3);
-//		TreeNode a4 = new TreeNode(4);
-//		TreeNode a5 = new TreeNode(5);
-//		TreeNode a6 = new TreeNode(6);
-//		TreeNode a7 = new TreeNode(7);
-//		TreeNode a8 = new TreeNode(8);
+		TreeNode a4 = new TreeNode(4);
+		TreeNode a5 = new TreeNode(5);
+		TreeNode a6 = new TreeNode(6);
+		TreeNode a7 = new TreeNode(7);
+		TreeNode a8 = new TreeNode(8);
 		
-//		a1.left = a2;
-//		a1.right = a3;
-//		
-//		a2.left = a4;
-//		a2.right = a5;
-//		a3.left = a6;
-//		a3.right = a7;
-//		
-//		a4.left = a8;
+		a1.left = a2;
+		a1.right = a3;
 		
-		a1.right = a2;
-		a2.right = a3;
+		a2.left = a4;
+		a2.right = a5;
+		a3.left = a6;
+		a3.right = a7;
+		
+		a4.left = a8;
+		
+//		a1.right = a2;
+//		a2.right = a3;
 		
 		return a1;
 	}
@@ -267,5 +267,26 @@ public class TreeNode {
         	return left + 1;
         }
         return Math.min(left, right) + 1;
+    }
+    
+    public static boolean hasPathSum(TreeNode root, int sum) {
+        if(root.left == null && root.right == null) {
+        	if(sum == root.val) {
+        		return true;
+        	} else{
+        		return false;
+        	}
+        }
+        
+        int sub = sum - root.val;
+        boolean left = false;
+        if(root.left != null) {
+        	left = hasPathSum(root.left, sub);
+        }
+        boolean right = false;
+        if(root.right != null) {
+        	right = hasPathSum(root.right, sub);
+        }
+        return left || right;
     }
 }

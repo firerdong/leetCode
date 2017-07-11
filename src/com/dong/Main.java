@@ -71,7 +71,9 @@ public class Main {
 //		System.out.println(t1.right.val);
 		
 		TreeNode tn = TreeNode.getATreeNode();
-		System.out.println(TreeNode.isBalanced2(tn));
+//		System.out.println(TreeNode.isBalanced2(tn));
+		
+		System.out.println(TreeNode.hasPathSum(tn, 8));
 	}
 
 }
