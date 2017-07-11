@@ -56,6 +56,20 @@ public class Main {
 		int[] a = {1,2,3,4,5,6};
 		TreeNode t = TreeNode.sortedArrayToBST(a);
 		TreeNode.output(t);
+		
+//		TreeNode t1 = new TreeNode(1);
+//		TreeNode t2 = new TreeNode(2);
+//		TreeNode t3 = new TreeNode(3);
+//		t1.left = t2;
+//		t2.left = t3;
+//		
+//		TreeNode p = t1;
+//		
+//		TreeNode t4 = new TreeNode(4);
+//		p.right = t4;
+//		
+//		System.out.println(t1.right.val);
+		
 	}
 
 }

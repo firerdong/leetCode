@@ -156,27 +156,54 @@ public class TreeNode {
 		return ret;
     }
     
-    public static TreeNode sortedArrayToBST(int[] nums) {
+    public static TreeNode sortedArrayToBST1(int[] nums) {
         if(nums.length == 0) {
         	return null;
         }
         
+        TreeNode p = null;
         TreeNode root = new TreeNode(nums[0]);
+        
         for(int i=1; i<nums.length; i++) {
-        	TreeNode p = root;
-        	TreeNode newNode = new TreeNode(nums[i]);
+        	p = root;
         	while(p != null) {
         		if(p.val < nums[i]) {
-        			p = p.right;
+        			if(p.right != null) {
+        				p = p.right;
+        			}else{
+        				p.right = new TreeNode(nums[i]);
+        				break;
+        			}
         		}else{
-        			p = p.left;
+        			if(p.left != null) {
+        				p = p.left;
+        			} else {
+        				p.left = new TreeNode(nums[i]);
+        				break;
+        			}
         		}
         	}
-        	System.out.println(nums[i]);
-        	p = newNode;
         }
         
         return root;
     }
 
+    public static TreeNode sortedArrayToBST(int[] nums) {
+        if(nums == null || nums.length == 0) {
+        	return null;
+        }
+        return helper(nums, 0, nums.length -1 );
+    }
+    
+    private static TreeNode helper(int [] nums, int l, int r) {
+    	if(l > r) {
+    		return null;
+    	}
+    	int index = (l + r) /2;
+    	TreeNode root = new TreeNode(nums[index]);
+    	root.left = helper(nums, l, index -1);
+    	root.right = helper(nums, index + 1, r);
+    	return root;
+    }
+    
 }
