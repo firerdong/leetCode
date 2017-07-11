@@ -1,5 +1,6 @@
 package com.dong;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -70,10 +71,19 @@ public class Main {
 //		
 //		System.out.println(t1.right.val);
 		
-		TreeNode tn = TreeNode.getATreeNode();
-//		System.out.println(TreeNode.isBalanced2(tn));
+//		TreeNode tn = TreeNode.getATreeNode();
+////		System.out.println(TreeNode.isBalanced2(tn));
+//		
+//		System.out.println(TreeNode.hasPathSum(tn, 8));
 		
-		System.out.println(TreeNode.hasPathSum(tn, 8));
+		List<List<Integer>> ret = PascalTriangle.generate(5);
+		for(List<Integer> l : ret) {
+			System.out.print("[");
+			for(int i : l ) {
+				System.out.print(i + " ");
+			}
+			System.out.println("]");
+		}
 	}
 
 }
