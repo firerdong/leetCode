@@ -53,9 +53,9 @@ public class Main {
 //		}
 		
 		
-		int[] a = {1,2,3,4,5,6};
-		TreeNode t = TreeNode.sortedArrayToBST(a);
-		TreeNode.output(t);
+//		int[] a = {1,2,3,4,5,6};
+//		TreeNode t = TreeNode.sortedArrayToBST(a);
+//		TreeNode.output(t);
 		
 //		TreeNode t1 = new TreeNode(1);
 //		TreeNode t2 = new TreeNode(2);
@@ -70,6 +70,8 @@ public class Main {
 //		
 //		System.out.println(t1.right.val);
 		
+		TreeNode tn = TreeNode.getATreeNode();
+		System.out.println(TreeNode.isBalanced2(tn));
 	}
 
 }

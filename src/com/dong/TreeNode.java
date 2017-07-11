@@ -17,19 +17,25 @@ public class TreeNode {
 		TreeNode a1 = new TreeNode(1);
 		TreeNode a2 = new TreeNode(2);
 		TreeNode a3 = new TreeNode(3);
-		TreeNode a4 = new TreeNode(4);
-		TreeNode a5 = new TreeNode(5);
-		TreeNode a6 = new TreeNode(6);
-		TreeNode a7 = new TreeNode(7);
-		TreeNode a8 = new TreeNode(8);
+//		TreeNode a4 = new TreeNode(4);
+//		TreeNode a5 = new TreeNode(5);
+//		TreeNode a6 = new TreeNode(6);
+//		TreeNode a7 = new TreeNode(7);
+//		TreeNode a8 = new TreeNode(8);
 		
-		a1.left = a2;
-		a1.right = a3;
-		a2.left = a4;
-		a2.right = a5;
-		a3.left = a6;
-		a3.right = a7;
-		a4.left = a8;
+//		a1.left = a2;
+//		a1.right = a3;
+//		
+//		a2.left = a4;
+//		a2.right = a5;
+//		a3.left = a6;
+//		a3.right = a7;
+//		
+//		a4.left = a8;
+		
+		a1.right = a2;
+		a2.right = a3;
+		
 		return a1;
 	}
 	
@@ -206,4 +212,41 @@ public class TreeNode {
     	return root;
     }
     
+    public static boolean isBalanced(TreeNode root) {
+        if(root == null) {
+        	return true;
+        }
+        int diff = maxDepth(root.left) - maxDepth(root.right);
+        if(diff > 1 || diff < -1) {
+        	return false;
+        }
+        return isBalanced(root.left) && isBalanced(root.right);
+    }
+    public static boolean isBalanced2(TreeNode root) {
+        if(root == null) {
+        	return true;
+        }
+        return helper(root) == -1 ? false:true; 
+    }
+    private static int helper(TreeNode root) {
+    	if(root == null) {
+    		return 0;
+    	}
+    	int left = helper(root.left);
+    	if(left == -1) {
+    		return -1;
+    	}
+    	int right = helper(root.right);
+    	if(right == -1) {
+    		return -1;
+    	}
+    	int diff = left - right;
+    	diff = diff>0? diff:0-diff;
+    	if(diff <= 1) {
+    		return Math.max(left, right) + 1; 
+    	}else{
+    		return -1;
+    	}
+    	
+    }
 }
