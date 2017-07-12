@@ -86,7 +86,12 @@ public class Main {
 //		int a[] = {6,1,3,2,4,7};
 //		int a[] = {1,2,4,2,5,7,2,4,9,0};
 //		int a[] = {1,2,4};
-		int a[] = {3    ,1,    2,    8,    3,    1,    9,    6};
-		System.out.println(BestTimetoBuyandSellStock.maxProfit3(a));
+//		int a[] = {3    ,1,    2,    8,    3,    1,    9,    6};
+//		System.out.println(BestTimetoBuyandSellStock.maxProfit3(a));
+		
+		String s1 = "A man, a plan, a canal: Panama";
+		String s2 = "race a car";
+		String s3 = " ";
+		System.out.println(ValidPalindrome.isPalindrome(s3));
 	}
 }
