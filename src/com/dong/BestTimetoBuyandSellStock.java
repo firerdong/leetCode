@@ -7,6 +7,30 @@ public class BestTimetoBuyandSellStock {
 	 */
     public static int maxProfit_wrong(int[] prices) {
         if(prices == null || prices.length <= 1) {
+        	return 0;
+        }
+//        int[] sub = new int[prices.length-1];
+//        if(sub.length == 0) {
+//        	return 0;
+//        }
+//        for(int i=1; i<=sub.length; i++){
+//        	sub[i-1] = prices[i] - prices[i-1];
+//        }
+//        for(int i=0; i<sub.length; i++) {
+//        	System.out.println(sub[i]);
+//        }
+        
+        int local = prices[1] - prices[0];
+        int global = local;
+        for(int k=1; k<prices.length-1; k++) {
+        	local = Math.max(prices[k+1]-prices[k], local + (prices[k+1]-prices[k]));
+        	global = Math.max(global, local);
+        }
+        return global<0?0:global;   
+    }
+    
+    public static int maxProfit1(int[] prices) {
+        if(prices == null || prices.length <= 1) {
             return 0;
         }
         int max = 0;
@@ -45,4 +69,26 @@ public class BestTimetoBuyandSellStock {
         return release2;
     }
     
+    public static int maxProfit2(int[] prices) {
+        if(prices == null || prices.length <= 1) {
+            return 0;
+        }
+        int[] max = new int[2];
+        max[0] = 0;
+        max[1] = 0;
+        for(int i=1; i<prices.length; i++) {
+            int tmp = prices[i] - prices[i-1];
+            if(tmp > 0) {
+            	if(tmp > max[0]) {
+            		max[0] = tmp;
+            	}
+            	if(max[0] > max[1]) {
+            		int change = max[1];
+            		max[1] = max[0];
+            		max[0] = change;
+            	}
+            }
+        }
+        return max[0] + max[1];
+    }
 }
