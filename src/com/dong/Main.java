@@ -12,9 +12,13 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 
+		int[] a = {1,3,6,10,13,16};
+		int ret[] = TwoSum.twoSum2(a, 16);
+		System.out.println(ret[0]);
+		System.out.println(ret[1]);
 		
-		ListNode ln = ListNode.getAListNode();
-		System.out.println(ListNode.hasCycle(ln));
+//		ListNode ln = ListNode.getAListNode();
+//		System.out.println(ListNode.hasCycle(ln));
 		
 //		int[] a = {1,2,3,4,5,2,3,4,5};
 //		System.out.println(SingleNumber.singleNumber(a));
