@@ -41,10 +41,8 @@ public class MinStack {
         return 0;
     }
     
+    //only peek
     public int getMin() {
-        while(main.peek() != min.peek()) {
-        	main.pop();
-        	min.pop();
-        }
+        return min.peek();
     }
 }
