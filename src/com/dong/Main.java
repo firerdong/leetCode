@@ -11,8 +11,13 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		int[] a = {1,2,3,4,5,2,3,4,5};
-		System.out.println(SingleNumber.singleNumber(a));
+
+		
+		ListNode ln = ListNode.getAListNode();
+		System.out.println(ListNode.hasCycle(ln));
+		
+//		int[] a = {1,2,3,4,5,2,3,4,5};
+//		System.out.println(SingleNumber.singleNumber(a));
 		
 //		for(int i: new int[]{2,3,4,5,6,8,9,10,15,16,17}) {
 //			//70 Climbing Stairs   
