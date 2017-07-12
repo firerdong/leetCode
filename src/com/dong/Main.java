@@ -1,7 +1,9 @@
 package com.dong;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Main {
 
@@ -77,10 +79,14 @@ public class Main {
 //		System.out.println(TreeNode.hasPathSum(tn, 8));
 		
 //		List<List<Integer>> ret = PascalTriangle.generate(5);
-		List<Integer> ret = PascalTriangle.getRow(5);
-		for(Integer l : ret) {
-			System.out.print(l + " ");
-		}
+//		List<Integer> ret = PascalTriangle.getRow(5);
+//		for(Integer l : ret) {
+//			System.out.print(l + " ");
+//		}
+//		int a[] = {6,1,3,2,4,7};
+//		int a[] = {1,2,4,2,5,7,2,4,9,0};
+//		int a[] = {1,2,4};
+		int a[] = {3    ,1,    2,    8,    3,    1,    9,    6};
+		System.out.println(BestTimetoBuyandSellStock.maxProfit3(a));
 	}
-
 }
