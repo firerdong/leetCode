@@ -11,6 +11,9 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		int[] a = {1,2,3,4,5,2,3,4,5};
+		System.out.println(SingleNumber.singleNumber(a));
+		
 //		for(int i: new int[]{2,3,4,5,6,8,9,10,15,16,17}) {
 //			//70 Climbing Stairs   
 //			System.out.println(ClimbingStairs.climbStairs(i));
@@ -89,9 +92,9 @@ public class Main {
 //		int a[] = {3    ,1,    2,    8,    3,    1,    9,    6};
 //		System.out.println(BestTimetoBuyandSellStock.maxProfit3(a));
 		
-		String s1 = "A man, a plan, a canal: Panama";
-		String s2 = "race a car";
-		String s3 = " ";
-		System.out.println(ValidPalindrome.isPalindrome(s3));
+//		String s1 = "A man, a plan, a canal: Panama";
+//		String s2 = "race a car";
+//		String s3 = " ";
+//		System.out.println(ValidPalindrome.isPalindrome(s3));
 	}
 }
