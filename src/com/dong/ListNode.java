@@ -65,5 +65,57 @@ public class ListNode {
         }
         return false;
     }
+    
+    //160. Intersection of Two Linked Lists
+    public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        if(headA == null || headB == null) {
+        	return null;
+        }
+        int lenA = 0;
+        ListNode pA = headA;
+        while(pA != null) {
+        	lenA++;
+        	pA = pA.next;
+        }
+        
+        int lenB = 0;
+        ListNode pB = headB;
+        while(pB != null) {
+        	lenB ++;
+        	pB = pB.next;
+        }
+        
+        if(lenA==0 || lenB==0) {
+        	return null;
+        }
+        
+        if(lenA > lenB) {
+        	pA = headA;
+        	int pre = lenA - lenB;
+        	while(pre > 0) {
+        		pA = pA.next;
+        		pre --;
+        	}
+        	pB = headB;
+        }else{
+        	pB = headB;
+        	int pre = lenB - lenA;
+        	while(pre > 0) {
+        		pB = pB.next;
+        		pre --;
+        	}
+        	pA = headA;
+        }
+        
+        while(pA!=null && pB !=null) {
+        	if(pA == pB) {
+        		return pA;
+        	}
+        	pA = pA.next;
+        	pB = pB.next;
+        }
+        
+        return null;
+    }
 
 }
