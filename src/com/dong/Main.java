@@ -12,10 +12,15 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 
-		int[] a = {1,3,6,10,13,16};
-		int ret[] = TwoSum.twoSum2(a, 16);
-		System.out.println(ret[0]);
-		System.out.println(ret[1]);
+		System.out.println(ExcelSheelColumnTitle.convertToTitle(26));
+		System.out.println(ExcelSheelColumnTitle.convertToTitle(27));
+		System.out.println(ExcelSheelColumnTitle.convertToTitle(28));
+		System.out.println(ExcelSheelColumnTitle.convertToTitle(52));
+		
+//		int[] a = {1,3,6,10,13,16};
+//		int ret[] = TwoSum.twoSum2(a, 16);
+//		System.out.println(ret[0]);
+//		System.out.println(ret[1]);
 		
 //		ListNode ln = ListNode.getAListNode();
 //		System.out.println(ListNode.hasCycle(ln));
