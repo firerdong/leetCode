@@ -12,10 +12,13 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 
-		System.out.println(ExcelSheelColumnTitle.convertToTitle(26));
-		System.out.println(ExcelSheelColumnTitle.convertToTitle(27));
-		System.out.println(ExcelSheelColumnTitle.convertToTitle(28));
-		System.out.println(ExcelSheelColumnTitle.convertToTitle(52));
+		System.out.println(ExcelSheelColumnTitle.titleToNumber("A"));
+		System.out.println(ExcelSheelColumnTitle.titleToNumber("Z"));
+		System.out.println(ExcelSheelColumnTitle.titleToNumber("AA"));
+		
+		
+//		int m[] = {4,4,4,4,1,2,3};
+//		System.out.println(MajorityElement.majorityElement(m));
 		
 //		int[] a = {1,3,6,10,13,16};
 //		int ret[] = TwoSum.twoSum2(a, 16);

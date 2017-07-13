@@ -13,4 +13,16 @@ public class ExcelSheelColumnTitle {
     	}
     	return sb.toString();
     }
+
+    //171. Excel Sheet Column Number
+    static public int titleToNumber(String s) {
+    	int base = 1;
+    	int ret = 0;
+        for(int i=s.length()-1; i>=0; i--) {
+        	ret += (s.charAt(i) - 'A' + 1) * base;
+        	base *= 26;
+        }
+        return ret;
+    }
+
 }
