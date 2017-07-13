@@ -12,8 +12,7 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 
-		FactorialTrailingZeroes.trailingZeroes(5);
-		
+		System.out.println(Numberof1Bits.hammingWeight(10));
 //		System.out.println(ExcelSheelColumnTitle.titleToNumber("A"));
 //		System.out.println(ExcelSheelColumnTitle.titleToNumber("Z"));
 //		System.out.println(ExcelSheelColumnTitle.titleToNumber("AA"));
