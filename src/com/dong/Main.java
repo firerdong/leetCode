@@ -12,9 +12,11 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 
-		System.out.println(ExcelSheelColumnTitle.titleToNumber("A"));
-		System.out.println(ExcelSheelColumnTitle.titleToNumber("Z"));
-		System.out.println(ExcelSheelColumnTitle.titleToNumber("AA"));
+		FactorialTrailingZeroes.trailingZeroes(5);
+		
+//		System.out.println(ExcelSheelColumnTitle.titleToNumber("A"));
+//		System.out.println(ExcelSheelColumnTitle.titleToNumber("Z"));
+//		System.out.println(ExcelSheelColumnTitle.titleToNumber("AA"));
 		
 		
 //		int m[] = {4,4,4,4,1,2,3};
